@@ -13,7 +13,7 @@ namespace Core.Specifications
             Criteria = criteria;
             Includes = includes;
         }
-
+//test
         public Expression<Func<T, bool>> Criteria {get;}
 //test
 //test123
