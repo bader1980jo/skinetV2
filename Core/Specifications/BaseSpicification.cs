@@ -13,7 +13,7 @@ namespace Core.Specifications
             Criteria = criteria;
             Includes = includes;
         }
-//updated212
+
         public Expression<Func<T, bool>> Criteria {get;}
 
         public List<Expression<Func<T, object>>> Includes {get;} = 
