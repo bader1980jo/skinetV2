@@ -15,7 +15,8 @@ namespace Core.Specifications
         }
 
         public Expression<Func<T, bool>> Criteria {get;}
-
+//test
+//test123
         public List<Expression<Func<T, object>>> Includes {get;} = 
             new List<Expression<Func<T, object>>>();
 
