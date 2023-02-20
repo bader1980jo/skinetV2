@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-3">
+            <form #loginform="ngForm" (ngSubmit)="loginUser()">
+                <mat-card class="my-4 m-5 p-4">
+                    <mat-card-title class="text-center text-uppercase display-6">
+                        Register
+                    </mat-card-title>
+                    <mat-card-content>
+
+                        <small *ngIf="msg!='null'" class="text-danger">{{msg}}</small>
+                        <mat-form-field class="input-full">
+                            <mat-label>UserName</mat-label>
+                            <input matInput name="username" type="text" [(ngModel)]="user.username"
+                                placeholder="UserName" required #username="ngModel"
+                                [class.is-invalid]="username.invalid && username.touched">
+                        </mat-form-field>
+                        <small class="text-danger" [class.d-none]="username.valid || username.untouched">UserName is
+                            required</small>
+
+                        <mat-form-field class="input-full">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" name="password" placeholder="******"
+                                [(ngModel)]="user.password" #password="ngModel" required
+                                [class.is-invalid]="password.invalid && password.touched">
+                        </mat-form-field>
+                        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password id
+                            required</small>
+                    </mat-card-content>
+
+                    <mat-card-actions align="start">
+                        <button [disabled]="loginform.form.invalid" mat-raised-button color="primary"
+                            class="ms-2">Login</button>
+                    </mat-card-actions>
+                   <a routerLink="/register" class="text-center">Register</a>
+                </mat-card>
+            </form>
+        </div>
+    </div>
+</div>
