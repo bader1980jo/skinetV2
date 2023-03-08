@@ -18,6 +18,10 @@ namespace API.Controllers
             _authContext = authContext;
         }
 
+
+        /* 
+            User login methode 
+        */
         [HttpPost("login")]
 
         public async Task<IActionResult> Authenticate([FromBody] User user)
@@ -35,6 +39,10 @@ namespace API.Controllers
             return Ok(new { Message = "Login Success!" });
         }
 
+
+        /* 
+           User register methode 
+        */
         [HttpPost("register")]
 
         public async Task<IActionResult> RegisterUser([FromBody] User user)

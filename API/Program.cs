@@ -21,7 +21,7 @@ builder.Services.AddCors(option =>
 //     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 // });
 
-builder.Services.AddDbContext<AuthContext>(opt =>
+builder.Services.AddDbContext<Infrastrcture.Data.AuthContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnStr"));
 });
