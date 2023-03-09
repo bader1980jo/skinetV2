@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-3">
+            <div class="shadow p-3 m-3">
+                <h1 class="text-center text-primary">Register</h1>
+                <form #registerform="ngForm" (ngSubmit)="registerUser()">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Name</label>
+                     
+                      <input matInput name="name"  class="form-control" type="text" [(ngModel)]="user.name" placeholder="Name" required
+                                #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
+                     <small class="text-danger" [class.d-none]="name.valid || name.untouched">name is
+                                  required</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input matInput name="username"  class="form-control" type="text" [(ngModel)]="user.username" placeholder="Username" required
+                        #username="ngModel" [class.is-invalid]="name.invalid && name.touched">
+                        <small class="text-danger" [class.d-none]="username.valid || username.untouched">Username is
+                          required</small>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input matInput name="email"  class="form-control" type="text" [(ngModel)]="user.email" placeholder="Email" required
+                        #email="ngModel"  pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" [class.is-invalid]="email.invalid && email.touched">
+                        <small class="text-danger" [class.d-none]="email.valid || email.untouched">E-mail is
+                          required</small>
+                      </div>
+                     
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input matInput name="password"  class="form-control" type="text" [(ngModel)]="user.password" placeholder="Password" required
+                      #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
+                      <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is
+                        required</small>
+                    </div>
+                    
+                    <button [disabled]="registerform.form.invalid" mat-raised-button
+                            color="primary" class="btn btn-primary mt-4">Register</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+</div>
